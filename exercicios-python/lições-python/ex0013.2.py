@@ -1,0 +1,7 @@
+produto = float(input('Valor do produto: '))
+desconto = int(input('Desconto pagamento a vista: '))
+prazo = int(input('Juros para pagamento a prazo: '))
+nv = produto * (desconto / 100)
+np = produto * (prazo / 100)
+print('Com o valor do produto sendo R${:.2f},\nPagando a vista você tem {}% de desconto\nE o valor passa a ser R${:.2f}'.format(produto, desconto,( produto - nv )))
+print('Para pagemento a prazo o valor sofre {}% de acréscimo, valor a prazo fica R${}'.format(prazo, (produto + np)))
