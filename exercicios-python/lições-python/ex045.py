@@ -1,39 +1,36 @@
-from random import randint
-itens = ('Pedra', 'Papel', 'Tesoura')
-computador = randint(0, 2)
-print('''Suas opções: 
-[ 0 ] PEDRA
-[ 1 ] PAPEL
-[ 2 ] TESOURA ''')
-jogador = int(input('Qual é a sua jogada? '))
-print('-='*11)
-print('Computador  jogou {}'.format(itens[computador]))
-print('Jogador jogou {}'.format(itens[jogador]))
-print('-='*11)
-if computador == 0:
-    if jogador == 0:
-        print("EMPATE")
-    elif == 1:
-        print('JOGADOR VENCE')
-    elif jogador == 2:
-        print('COMPUTADOR VENCE')
-    else:
-        print('JOGADA INVÁLIDA')
-elif computador == 1:
-    if jogador == 0:
-
-    elif == 1:
-
-    elif jogador == 2:
-
-    else:
-        print('JOGADA INVÁLIDA')
-elif computador == 2:
-    if jogador == 0:
-
-    elif == 1:
-
-    elif jogador == 2:
-
-    else:
-        print('JOGADA INVÁLIDA')
+from random import choice
+lista = ('Pedra', 'Papel', 'Tesoura') #Itens a serem escolhidos
+computer = choice(lista) #Ecolha do computador
+print('=-'*15)
+print('Vamos jogar Jokempô ? ')
+print('''Qual sua escolha:
+[ 00 ] PEDRA
+[ 01 ] PAPEL
+[ 02 ] TESOURA''')
+player = int(input('Faça sua escolha: '))
+from time import sleep
+print('AGUARDE...')
+sleep(3)
+#Situações onde computador e jogador escolhem os mesmos itens.
+if computer and player == 0:
+    print('EMPATE')
+    if computer and player == 1:
+        print('EMPATE')
+        if computer and player == 2:
+            print('EMPATE')
+#Situações computador ganha.
+elif computer == 0 and player == 2:
+    print('Que pena pra você! Eu escolhi {}. Eu venci '.format(computer))
+elif computer == 1 and player == 0:
+    print('Que pena pra você! Eu escolhi {}. Eu venci '.format(computer))
+elif computer == 2 and player == 1:
+    print('Que pena pra você! Eu escolhi {}. Eu venci '.format(computer))
+#Situações onde jogador vence
+elif player == 0 and computer == 2:
+    print('Que sorte! Eu escolhi {}. Você venceu'.format(computer))
+elif player == 1 and computer == 0:
+    print('Que sorte! Eu escolhi {}. Você venceu'.format(computer))
+elif player == 2 and computer == 1:
+    print('Que sorte! Eu escolhi {}. Você venceu'.format(computer))
+sleep(3)
+print('=-'*15)
