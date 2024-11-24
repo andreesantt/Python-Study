@@ -8,7 +8,7 @@ media = (nota1 + nota2) / 2
 if media >= 6:
     print('Parabéns, sua média foi {}.'.format(media))
     print('Você foi \033[4;;42mAPROVADO\033[;m')
-elif media == 5.5:
+elif media >= 5.5 or media <= 5.9: 
     print('Ops!!! Sua média foi {}'.format(media))
     print('Você está de \033[4;;44mRECUPERAÇÃO\033[;m')
 else:
