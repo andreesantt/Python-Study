@@ -1,6 +1,6 @@
-from random import choice
-lista = ('Pedra', 'Papel', 'Tesoura') #Itens a serem escolhidos
-computer = choice(lista) #Ecolha do computador
+from random import randint
+itens = ('Pedra', 'Papel', 'Tesoura') #Itens a serem escolhidos
+computer = randint(0, 2) #Ecolha do computador
 print('=-'*15)
 print('Vamos jogar Jokempô ? ')
 print('''Qual sua escolha:
@@ -12,25 +12,25 @@ from time import sleep
 print('AGUARDE...')
 sleep(3)
 #Situações onde computador e jogador escolhem os mesmos itens.
-if computer and player == 0:
+if computer == 0 and player == 0:
     print('EMPATE')
-    if computer and player == 1:
+elif computer == 1 and player == 1:
         print('EMPATE')
-        if computer and player == 2:
+elif computer == 2 and player == 2:
             print('EMPATE')
 #Situações computador ganha.
-elif computer == 0 and player == 2:
-    print('Que pena pra você! Eu escolhi {}. Eu venci '.format(computer))
+if computer == 0 and player == 2:
+    print('Que pena pra você! Eu escolhi {}. Eu venci '.format(itens[computer]))
 elif computer == 1 and player == 0:
-    print('Que pena pra você! Eu escolhi {}. Eu venci '.format(computer))
+    print('Que pena pra você! Eu escolhi {}. Eu venci '.format(itens[computer]))
 elif computer == 2 and player == 1:
-    print('Que pena pra você! Eu escolhi {}. Eu venci '.format(computer))
+    print('Que pena pra você! Eu escolhi {}. Eu venci '.format(itens[computer]))
 #Situações onde jogador vence
-elif player == 0 and computer == 2:
-    print('Que sorte! Eu escolhi {}. Você venceu'.format(computer))
+if player == 0 and computer == 2:
+    print('Que sorte! Eu escolhi {}. Você venceu'.format(itens[computer]))
 elif player == 1 and computer == 0:
-    print('Que sorte! Eu escolhi {}. Você venceu'.format(computer))
+    print('Que sorte! Eu escolhi {}. Você venceu'.format(itens[computer]))
 elif player == 2 and computer == 1:
-    print('Que sorte! Eu escolhi {}. Você venceu'.format(computer))
+    print('Que sorte! Eu escolhi {}. Você venceu'.format(itens[computer]))
 sleep(3)
 print('=-'*15)
