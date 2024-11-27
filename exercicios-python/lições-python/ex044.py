@@ -10,7 +10,7 @@ dinheiro_avista = valor_produto - (valor_produto * 0.1) # À vista em dinheiro; 
 credito_avista = valor_produto - (valor_produto * 0.05) # Crédito a vista; 5% de desconto.
 parcelado2x = valor_produto # Crédito parcelado em 2x; valor do produto original
 parcelado3x = valor_produto + (valor_produto * 0.25) #Crédito parcelado em 3x ou mais; 25% de juros
-usuario_escolhe = int(input('Digite a condição de pagamento desejada: '))
+usuario_escolhe = int(input('Digite a condição de pagamento desejada: ')) #Usuário escolhe opção desejada
 if usuario_escolhe == 0:
     print(f'Você escolheu {forma_pagamento[usuario_escolhe]}, portanto ganhou 10% de desconto e pagará R${dinheiro_avista:.2f}')
 elif usuario_escolhe == 1:
@@ -19,3 +19,5 @@ elif usuario_escolhe == 2:
     print(f'Você escolheu {forma_pagamento[usuario_escolhe]}, portanto o valor do produto não sofrerá alteraçãoes e você pagará {parcelado2x}.')
 elif usuario_escolhe == 3:
     print(f'Você escolheu {forma_pagamento[usuario_escolhe]}, o valor fo produto passa a ser {parcelado3x} pois sofre juros de 25%')
+else:
+    print('Você digitou uma opção inválida')
