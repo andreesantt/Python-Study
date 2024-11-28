@@ -2,13 +2,13 @@
 comprimento1 = int(input('Digite o primeiro comprimento: '))
 comprimento2 = int(input('Digite o segundo comprimento: '))
 comprimento3 = int(input('Digite o terceiro comprimento: '))
-if comprimento1 + comprimento2 > comprimento3 and comprimento1 + comprimento3 > comprimento2 and comprimento2 + comprimento3 > 1:
-    print('Parabéns, você formou um triângulo')
+if comprimento1 < comprimento2 + comprimento3 and comprimento1 < comprimento3 + comprimento2 and comprimento2 < comprimento3 + comprimento1:
+    print('Parabéns, você formou um triângulo', end=' ')
+    if comprimento1 == comprimento2 == comprimento3:
+        print('EQUILÁTERO')
+    elif comprimento1 != comprimento2 != comprimento3 != comprimento1:
+        print('ESCALENO')
+    else:
+        print('ISÓCELES')
 else:
-    print('Você não pode formar um triângulo com esses dados')
-if comprimento1 == comprimento2 == comprimento3:
-    print('Este triangulo é Equilátero')
-elif comprimento1 == comprimento2 != comprimento3 or comprimento1 == comprimento3 != comprimento2 or comprimento2 == comprimento3 != 1:
-    print('O triangulo é isóceles')
-else:
-    print('O triangulo é Escaleno')
+    print('Você não pode formar um triângulo com os segmentos acima')
