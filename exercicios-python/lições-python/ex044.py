@@ -1,23 +1,26 @@
 # Programa que calcula o valor a ser pago considerando condições de pagamento.
+print('{:=^40}'.format(''' ANDRE'S STORE '''))
 valor_produto = float(input('Digite o valor produto: R$ ')) # Usuário digita valor do produto a ser calculado.
-forma_pagamento = ('À vista', 'Crédito a vista', 'Parcelado 2x', 'Parcelado 3x ou mais')
 print('''Escolha a forma de pagamento desejada: 
-    [ 00 ] À vista: 
-    [ 01 ] Crédito a vista: 
-    [ 02 ] Parcelado 2x: 
-    [ 03 ] Parcelado 3x ou mais''')
-dinheiro_avista = valor_produto - (valor_produto * 0.1) # À vista em dinheiro; 10% de desconto.
-credito_avista = valor_produto - (valor_produto * 0.05) # Crédito a vista; 5% de desconto.
-parcelado2x = valor_produto # Crédito parcelado em 2x; valor do produto original
-parcelado3x = valor_produto + (valor_produto * 0.25) #Crédito parcelado em 3x ou mais; 25% de juros
-usuario_escolhe = int(input('Digite a condição de pagamento desejada: ')) #Usuário escolhe opção desejada
-if usuario_escolhe == 0:
-    print(f'Você escolheu {forma_pagamento[usuario_escolhe]}, portanto ganhou 10% de desconto e pagará R${dinheiro_avista:.2f}')
-elif usuario_escolhe == 1:
-    print(f'Você escolheu {forma_pagamento[usuario_escolhe]}, ganhou 5% de desconto e pagará R${credito_avista:.2f}')
-elif usuario_escolhe == 2:
-    print(f'Você escolheu {forma_pagamento[usuario_escolhe]}, portanto o valor do produto não sofrerá alteraçãoes e você pagará {parcelado2x}.')
-elif usuario_escolhe == 3:
-    print(f'Você escolheu {forma_pagamento[usuario_escolhe]}, o valor fo produto passa a ser {parcelado3x} pois sofre juros de 25%')
+    [ 1 ] À vista: 
+    [ 2 ] Crédito a vista: 
+    [ 3 ] Parcelado 2x: 
+    [ 4 ] Parcelado 3x ou mais''')
+forma_pagamento = int(input('Digite a opção desejada: '))
+if forma_pagamento == 1:
+    total = valor_produto - (valor_produto * 10 / 100)
+elif forma_pagamento == 2:
+    total = valor_produto - (valor_produto * 5 / 100)
+elif forma_pagamento == 3:
+    total = valor_produto
+    parcela = total / 2
+    print(f'Sua compra será parcelada em 2x de {parcela} SEM JUROS')
+elif forma_pagamento == 4:
+    total = valor_produto + (valor_produto * 20 / 100 )
+    totalparc = int(input('Quantas parcelas? '))
+    parcela = total / totalparc
+    print(f'Sua compra será parcelada em {totalparc}x de R${parcela:.2f} COM JUROS')
 else:
-    print('Você digitou uma opção inválida')
+    total = valor_produto
+    print('OPÇÃO INVÁLIDA. TENTE NOVAMENTE')
+print(f'Sua compra de R${valor_produto:.2f}, vai custar R${total:.2f} no final')
