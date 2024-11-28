@@ -3,7 +3,7 @@ peso_usuario = float(input('Digite seu peso: ')) # Usuário digita seu peso
 altura_usuario = float(input('Digite sua altura: ')) # Usuário digita sua altura
 alt2 = altura_usuario ** 2 # Eleva a altura fornecida ao quadrado
 imc = peso_usuario / alt2  #Divide altura ao quadrado para encontrar índice de massa corporal
-print(f'Seu índice de massa corporal é {imc:.2f}, de acordo com os dados fornecidos\nE cálculo do seu IMC vamos identificar sua situação atual')
+print(f'Seu índice de massa corporal é {imc:.1f}, de acordo com os dados fornecidos\nE cálculo do seu IMC vamos identificar sua situação atual')
 from time import sleep
 print('AGUARDE...')
 sleep(3)
