@@ -1,7 +1,9 @@
 # Programa que lê seis números inteiros e mostre a soma se forem pares;
 soma = 0
-for num in range(1, 7):
-    numpar = int(input('Digite um número inteiro: '))
-    soma += numpar
-if soma % 2:
-    print(f'A soma dos números pares digitados são {soma}')
+cont = 0
+for c in range(1, 7):
+    num = int(input(f'Digite o {c} valor inteiro: '))
+    if num % 2 == 0:
+        soma += num
+        cont += 1
+print(f'Você informou {cont} números PARES  e a soma foi {soma}')
